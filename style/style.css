@@ -1,0 +1,645 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    cursor: default;
+    user-select: none;
+}
+
+#startscreen,
+#modeselection,
+#story {
+    background-image: url(../images/bg02.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#store {
+    background-image: url(../images/bg01.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.startgame {
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    height: 10rem;
+}
+
+.startgame img {
+    width: 45rem;
+    text-align: center;
+    user-select: none;
+}
+
+.startgame p {
+    border: 1px solid transparent;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+    font-size: 1.4rem;
+    color: #DCDCDC;
+    margin-top: 40px;
+
+}
+
+.copyrights {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    color: #F4F3FC;
+}
+
+.menulist {
+    padding: 8rem 8rem;
+    color: #DCDCDC;
+    float: left;
+}
+
+.menulist p {
+    padding: 10px 0px;
+    font-size: 20px;
+    width: fit-content;
+    height: 40px;
+    transition: 0.1s ease-in-out;
+}
+
+.menulist p:hover {
+    font-size: 1.6rem;
+    margin-left: -23px;
+}
+
+.navbtn {
+    position: absolute;
+    bottom: 10px;
+    margin: auto;
+    text-align: center;
+    color: #DCDCDC;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.navbtn div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px 15px;
+}
+
+.navbtn div img {
+    border-radius: 100px;
+}
+
+#options {
+    color: #DCDCDC;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Saved Games List style */
+.savedgameslist {
+    width: 55rem;
+    height: 10vh;
+    float: right;
+    margin-right: 11rem;
+    margin-top: 7.4rem;
+}
+
+.savedgames {
+    color: #DCDCDC;
+    background-color: rgba(51, 51, 51, 0.2);
+    width: 45rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 5px;
+    gap: 20px;
+    margin: 20px 0px;
+    background-color: #000000c4;
+}
+
+.savedgames img {
+    width: 11rem;
+}
+
+.savedgametimestamp {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 20px;
+    margin: 8px 0px;
+}
+
+.savedchapter {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 25px;
+    margin: 8px 0px;
+}
+
+.savedchapter p:nth-child(1) {
+    font-size: 25px;
+}
+
+.savedchapter p:nth-child(2) {
+    font-size: 19px;
+}
+
+.savedlocation {
+    margin: 8px 0px;
+}
+
+/* Continue Game  */
+.continuegame {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #10101087;
+}
+
+.continuegame div {
+    background-color: #04040C;
+    color: #DCDCDC;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 25rem;
+    height: 18rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.continuegame p:first-child {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.continuegame p:nth-child(2) {
+    font-size: 1.4rem;
+    margin-top: 5rem;
+}
+
+.gamemode {
+    background-color: #040404;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.modes {
+    width: 25rem;
+    height: 30rem;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    color: #DCDCDC;
+}
+
+.mode {
+    padding: 25px 5px;
+    font-size: 1.8rem;
+    border-top: 1px solid #f4f4fc45;
+    font-weight: bold;
+}
+
+.mode:hover {
+    background-color: rgba(224, 224, 224, 0.25);
+}
+
+.mode:first-child:hover {
+    background-color: transparent;
+}
+
+.mode:first-child {
+    border-top: 1px solid transparent;
+    font-weight: normal;
+}
+
+.mode:nth-child(4) {
+    border-bottom: 1px solid #f4f4fc45;
+}
+
+/* Settings  */
+.seetingsrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.seetingsrow p {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seetingsrow div {
+    padding: 5px 20px;
+    font-size: 20px;
+    border-left: 2px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seetingsrow div:hover {
+    border-bottom: 2px solid #BE9553;
+}
+
+/* Controls  */
+.controls,
+.camera,
+.display,
+.graphics,
+.language,
+.audio {
+    width: 35rem;
+    height: 30rem;
+    margin-left: 4rem;
+    margin-top: 5rem;
+}
+
+.ctrls,
+.camsettting,
+.dpysetting,
+.gpusetting,
+.langsetting,
+.adosetting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.ctrls p,
+.camsettting p,
+.dpysetting p,
+.gpusetting p,
+.langsetting p,
+.adosetting p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 20px;
+}
+
+.ctrls p:nth-child(2),
+.camsettting p:nth-child(2),
+.dpysetting p:nth-child(2),
+.gpusetting p:nth-child(2),
+.langsetting p:nth-child(2),
+.adosetting p:nth-child(2) {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Controls  */
+.ctrls:nth-child(3) p {
+    padding-left: 30px;
+}
+
+.ctrls:nth-child(4) p {
+    padding-left: 30px;
+}
+
+.ctrls:nth-child(5) p {
+    padding-left: 30px;
+}
+
+.ctrls:nth-child(6) p {
+    padding-left: 30px;
+}
+
+.ctrls:nth-child(7) p {
+    padding-left: 30px;
+}
+
+.ctrls:nth-child(8) p {
+    padding-left: 30px;
+}
+
+/* Camera  */
+.camsettting:nth-child(2) p {
+    padding-left: 30px;
+}
+
+.camsettting:nth-child(3) p {
+    padding-left: 30px;
+}
+
+.camsettting:nth-child(4) p {
+    padding-left: 30px;
+}
+
+.camsettting:nth-child(6) p {
+    padding-left: 30px;
+}
+
+.camsettting:nth-child(7) p {
+    padding-left: 30px;
+}
+
+/* Display   */
+.dpysetting:nth-child(6) p {
+    padding-left: 30px;
+}
+
+.dpysetting:nth-child(7) p {
+    padding-left: 30px;
+}
+
+.dpysetting:nth-child(8) p {
+    padding-left: 30px;
+}
+
+/* Audio  */
+.adosetting:nth-child(2) p {
+    padding-left: 30px;
+}
+
+.adosetting:nth-child(3) p {
+    padding-left: 30px;
+}
+
+.adosetting:nth-child(4) p {
+    padding-left: 30px;
+}
+
+.adosetting:nth-child(5) p {
+    padding-left: 30px;
+}
+
+.adosetting:nth-child(6) p {
+    padding-left: 30px;
+}
+
+.adosetting:nth-child(7) p {
+    padding-left: 30px;
+}
+
+/* Language */
+.langsetting:nth-child(4) p {
+    padding-left: 30px;
+    color: rgba(255, 255, 255, 0.293);
+}
+
+.langsetting:nth-child(5) p {
+    padding-left: 30px;
+    color: rgba(255, 255, 255, 0.293);
+}
+
+.langsetting:nth-child(6) p {
+    padding-left: 30px;
+    color: rgba(255, 255, 255, 0.293);
+}
+
+.langsetting:nth-child(7) p {
+    padding-left: 30px;
+    color: rgba(255, 255, 255, 0.293);
+}
+
+.langsetting:nth-child(8) p {
+    padding-left: 30px;
+    color: rgba(255, 255, 255, 0.293);
+}
+
+.langsetting:nth-child(9) p {
+    padding-left: 30px;
+    color: rgba(255, 255, 255, 0.293);
+}
+
+/* Load Function CSS  */
+.imgfade {
+    animation: fadeIn 4s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Preloader  CSS */
+#preloader {
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.loadimg img {
+    width: 40rem;
+}
+
+.contentnotfound {
+    height: 100vh;
+    width: 100%;
+    background-color: #0000009c;
+}
+
+.contentnotfound div {
+    position: relative;
+    top: 25%;
+    left: 0;
+    right: 0;
+    height: 16rem;
+    width: 20rem;
+    background-color: #040404;
+    margin: auto;
+    color: #DCDCDC;
+    padding: 3rem;
+    text-align: center;
+}
+
+.contentnotfound div p {
+    margin-top: 8rem;
+    font-size: 22px;
+}
+
+.contentnotfound div h3 {
+    font-size: 28px;
+    margin-top: 2rem;
+}
+
+.rangectrl {
+    appearance: none;
+    height: 2px;
+    width: 100%;
+}
+
+.rangectrl::-webkit-slider-thumb {
+    appearance: none;
+    width: 3px;
+    height: 18px;
+    background-color: #C4C4BC;
+}
+
+.results {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #040404;
+    color: #DCDCDC;
+    z-index: 20;
+}
+
+.result {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 28rem;
+}
+
+.rlts {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 3px;
+}
+
+.rlts p:first-child {
+    float: left;
+    font-size: 23px;
+}
+
+.rlts p:nth-child(2) {
+    float: right;
+    font-size: 20px;
+}
+
+.chapterend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    font-size: 35px;
+    gap: 14px;
+    font-weight: 900;
+}
+
+.chapterend p:first-child {
+    color: #C4C4BC;
+}
+
+.chapterend p:last-child {
+    color: #747474;
+}
+
+.chapter {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.chapter div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5rem;
+    font-size: 20px;
+}
+
+.chapter div svg:first-child {
+    margin-right: 2rem;
+}
+
+.chapter div svg:nth-child(2) {
+    margin-left: 2rem;
+}
+
+.rlts:nth-child(even) {
+    background-color: rgba(224, 224, 224, 0.15);
+}
+
+/* Responsiveness  */
+#desktop {
+    display: block;
+}
+
+#phone {
+    text-align: center;
+    overflow: hidden;
+    background-color: #04040C;
+    color: #DCDCDC;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+#phone h2 {
+    margin-top: 30%;
+    margin-bottom: 4vh;
+}
+
+#phone p {
+    padding: 15px;
+    background-color: brown;
+    height: 12px;
+    width: 8rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-top: 6vh;
+}
+
+@media screen and (max-width:720px) {
+    #phone {
+        display: block;
+    }
+
+    #desktop {
+        display: none;
+    }
+}
