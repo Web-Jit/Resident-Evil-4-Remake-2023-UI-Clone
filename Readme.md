@@ -7,7 +7,7 @@
 - 1920 X 1080
 
 # 🔗 Demo
-<a href='https://re4.webjeet.me/' tarbet='_blank'>Click Here</a>
+<a href='https://re4.webjeet.me/'>Click Here</a>
 
 # 📷 Screenshots
 <img src='https://ik.imagekit.io/fth7wfgzc/re4/SS-1_Ub1upGuXU.png?updatedAt=1681385985179'>
