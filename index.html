@@ -16,612 +16,605 @@
 
     <!-- Preloader -->
     <div id="preloader" style="display: block;">
-        <div class="loadimg">
+        <div class="loadimg imagefade">
             <img src="./images/Capcom_logo.png" width="90px" alt="Capcom Logo">
         </div>
     </div>
 
-    <div id="desktop">
 
-        <!-- Start Screen  -->
-        <div id="startscreen" style="display: none;">
-            <div class="startgame">
-                <img src="./images/logo-re.svg" alt="Resident Evil 4 Logo" id="re4logo">
-                <p onclick="showmodeselection()">START GAME</>
-            </div>
-            <p class="copyrights">ⒸCAPCOM CO., LTD. 2005, 2023 ALL RIGHTS RESERVED.</p>
+    <!-- Start Screen  -->
+    <div id="startscreen" style="display: none;">
+        <div class="startgame">
+            <img src="./images/logo-re.svg" alt="Resident Evil 4 Logo" id="re4logo">
+            <p onclick="showmodeselection()">START GAME</>
+        </div>
+        <p class="copyrights">ⒸCAPCOM CO., LTD. 2005, 2023 ALL RIGHTS RESERVED.</p>
+    </div>
+
+    <!-- Mode Selection  -->
+    <div id="modeselection" style="display: none;">
+        <div class="menulist">
+            <p onclick="showstory()">MAIN STORY</p>
+            <p>BONUSES</p>
+            <p onclick="showoptions()">OPTIONS</p>
+            <p onclick="showstore()">ONLINE STORE</p>
+            <p onclick="showstart()">EXIT</>
         </div>
 
-        <!-- Mode Selection  -->
-        <div id="modeselection" style="display: none;">
-            <div class="menulist">
-                <p onclick="showstory()">MAIN STORY</p>
-                <p>BONUSES</p>
-                <p onclick="showoptions()">OPTIONS</p>
-                <p onclick="showstore()">ONLINE STORE</p>
-                <p onclick="showstart()">EXIT</>
+        <div class="navbtn">
+            <p>Play through the main story and experience the nightmare</p>
+            <div>
+                <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABw0lEQVR4nMVUS0sCURS+lmbhs/JRSEmZppmPIRIfUSipOYYa5QTSwp3ac1vuol3QqraZ/dIT55JDOXPHGUlafHA59zvnu/e8SOfzHCYJ8q8Crfc65C9T4E+ugn3ZAgajngLPaCtcpSlnLIHiTQasTjMQQhRhdZkpV7VA+0OAWGlzZGAyhHgpCO2+MFpgnODkGxwfVBbAr7Kcp6Z1NAC+VKfTMXlHt3vyAlgszCfL0RNyiU5u3yK7Jk7Tr8KLAtgtSt/PNDjRKSnEFLnYXRIBbDslp4uXY2i+VqH5VoPGM6/I9ae8UgGb28J0cHjnKeewkxJft+CxMfk4JxIBw6ye6bB7sk05oYN1COc26HmnssXkYyxNAvWnIuUE99cgnPPR89ljQZuAfUk+RRaHiTml2DHyKbKqL3K0GKD31W4OuHKIotbNUVskH1BfZCyeHLn6kKX3vsSKJEDlPivfptdpdYOGE5s4jUBSiILRNCPa5yxGasO74am2uc3Q6tW1rwqiEkd3jFUxAO6acYNz5ZCKdd0XIM5rF+F4let6ANyKmM9RgZEznBZVArTwvTrtLuwa7G0cIASe0Ybd8rOgmgX+AhMX+AK05uC1oMu1YAAAAABJRU5ErkJggg==" />
+                <p>Confirm</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN STORY  -->
+
+    <div id="story" style="display: none;">
+        <div class="menulist" style="float: left;">
+            <p id="continue">CONTINUE</p>
+            <p id="load_game">LOAN GAME</p>
+            <p id="new_game">NEW GAME</p>
+            <p id="results">RESULT</p>
+            <p id="extras">EXTRAS</p>
+        </div>
+
+        <!-- Saved Games List  -->
+        <div class="savedgameslist" style="display: none;">
+            <div class="savedgames">
+                <img src="./images/location_img06.jpg" width="90px" alt="">
+                <div class="savegameinfo">
+
+                    <div class="savedgametimestamp">
+                        <p>03/07/2023</p>
+                        <p>22:31:45</p>
+                    </div>
+
+                    <div class="savedchapter">
+                        <p>CHAPTER 5</p>
+                        <p>- STANDARD -</p>
+                    </div>
+
+                    <div class="savedlocation">
+                        <p>Village / Farm / Head for the extraction point</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="savedgames">
+                <img src="./images/location_img06.jpg" width="90px" alt="">
+                <div class="savegameinfo">
+
+                    <div class="savedgametimestamp">
+                        <p>03/07/2023</p>
+                        <p>22:31:45</p>
+                    </div>
+
+                    <div class="savedchapter">
+                        <p>CHAPTER 5</p>
+                        <p>- STANDARD -</p>
+                    </div>
+
+                    <div class="savedlocation">
+                        <p>Village / Farm / Head for the extraction point</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Conitnue Gamme  -->
+        <div class="continuegame" style="display: none;">
+            <div>
+                <p>There is no saved game</p>
+                <p id="ok">OK</p>
+            </div>
+        </div>
+
+        <!-- Start Game  -->
+        <div class="gamemode" style="display: none;">
+            <div class="modes">
+                <p class="mode">GAME MODE</p>
+                <p class="mode demo">ASSISTED</p>
+                <p class="mode demo">STANDARD</p>
+                <p class="mode demo">HARDCORE</p>
             </div>
 
             <div class="navbtn">
-                <p>Play through the main story and experience the nightmare</p>
+                <p>Start a new game</p>
+                <div>
+
+                    <div>
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABw0lEQVR4nMVUS0sCURS+lmbhs/JRSEmZppmPIRIfUSipOYYa5QTSwp3ac1vuol3QqraZ/dIT55JDOXPHGUlafHA59zvnu/e8SOfzHCYJ8q8Crfc65C9T4E+ugn3ZAgajngLPaCtcpSlnLIHiTQasTjMQQhRhdZkpV7VA+0OAWGlzZGAyhHgpCO2+MFpgnODkGxwfVBbAr7Kcp6Z1NAC+VKfTMXlHt3vyAlgszCfL0RNyiU5u3yK7Jk7Tr8KLAtgtSt/PNDjRKSnEFLnYXRIBbDslp4uXY2i+VqH5VoPGM6/I9ae8UgGb28J0cHjnKeewkxJft+CxMfk4JxIBw6ye6bB7sk05oYN1COc26HmnssXkYyxNAvWnIuUE99cgnPPR89ljQZuAfUk+RRaHiTml2DHyKbKqL3K0GKD31W4OuHKIotbNUVskH1BfZCyeHLn6kKX3vsSKJEDlPivfptdpdYOGE5s4jUBSiILRNCPa5yxGasO74am2uc3Q6tW1rwqiEkd3jFUxAO6acYNz5ZCKdd0XIM5rF+F4let6ANyKmM9RgZEznBZVArTwvTrtLuwa7G0cIASe0Ybd8rOgmgX+AhMX+AK05uC1oMu1YAAAAABJRU5ErkJggg==" />
+                        <p>Confirm</p>
+                    </div>
+                    <div onclick="hidegamemode()">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
+                        <p>Back</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result  -->
+        <div class="results" style="display: none;">
+
+            <div class="result">
+                <div class="chapter">
+                    <h2>RESULTS</h2>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-chevron-left">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg> CHAPTER 5 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="rlts">
+                    <p>GAME MODE</p>
+                    <p>STANDARD</p>
+                </div>
+                <div class="rlts">
+                    <p>CHAPTER PLAY TIME</p>
+                    <p>01:05:17</p>
+                </div>
+                <div class="rlts">
+                    <p>ENEMIES KILLED</p>
+                    <p>57</p>
+                </div>
+                <div class="rlts">
+                    <p>DEATHS</p>
+                    <p>4</p>
+                </div>
+                <div class="rlts">
+                    <p>ACCURACY</p>
+                    <p>69.9%</p>
+                </div>
+                <div class="rlts">
+                    <p>TIME DAMAGED</p>
+                    <p>19</p>
+                </div>
+            </div>
+            <div class="chapterend">
+                <p>CHAPTER</p>
+                <p>END</p>
+            </div>
+            <div class="navbtn">
+                <div>
+                    <div onclick="hideresults()">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
+                        <p>Back</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbtn">
+            <p id="downtext">Continue playing from your last save</p>
+            <div>
+
                 <div>
                     <img
                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABw0lEQVR4nMVUS0sCURS+lmbhs/JRSEmZppmPIRIfUSipOYYa5QTSwp3ac1vuol3QqraZ/dIT55JDOXPHGUlafHA59zvnu/e8SOfzHCYJ8q8Crfc65C9T4E+ugn3ZAgajngLPaCtcpSlnLIHiTQasTjMQQhRhdZkpV7VA+0OAWGlzZGAyhHgpCO2+MFpgnODkGxwfVBbAr7Kcp6Z1NAC+VKfTMXlHt3vyAlgszCfL0RNyiU5u3yK7Jk7Tr8KLAtgtSt/PNDjRKSnEFLnYXRIBbDslp4uXY2i+VqH5VoPGM6/I9ae8UgGb28J0cHjnKeewkxJft+CxMfk4JxIBw6ye6bB7sk05oYN1COc26HmnssXkYyxNAvWnIuUE99cgnPPR89ljQZuAfUk+RRaHiTml2DHyKbKqL3K0GKD31W4OuHKIotbNUVskH1BfZCyeHLn6kKX3vsSKJEDlPivfptdpdYOGE5s4jUBSiILRNCPa5yxGasO74am2uc3Q6tW1rwqiEkd3jFUxAO6acYNz5ZCKdd0XIM5rF+F4let6ANyKmM9RgZEznBZVArTwvTrtLuwa7G0cIASe0Ybd8rOgmgX+AhMX+AK05uC1oMu1YAAAAABJRU5ErkJggg==" />
                     <p>Confirm</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- MAIN STORY  -->
-
-        <div id="story" style="display: none;">
-            <div class="menulist" style="float: left;">
-                <p id="continue">CONTINUE</p>
-                <p id="load_game">LOAN GAME</p>
-                <p id="new_game">NEW GAME</p>
-                <p id="results">RESULT</p>
-                <p id="extras">EXTRAS</p>
-            </div>
-
-            <!-- Saved Games List  -->
-            <div class="savedgameslist" style="display: none;">
-                <div class="savedgames">
-                    <img src="./images/location_img06.jpg" width="90px" alt="">
-                    <div class="savegameinfo">
-
-                        <div class="savedgametimestamp">
-                            <p>03/07/2023</p>
-                            <p>22:31:45</p>
-                        </div>
-
-                        <div class="savedchapter">
-                            <p>CHAPTER 5</p>
-                            <p>- STANDARD -</p>
-                        </div>
-
-                        <div class="savedlocation">
-                            <p>Village / Farm / Head for the extraction point</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="savedgames">
-                    <img src="./images/location_img06.jpg" width="90px" alt="">
-                    <div class="savegameinfo">
-
-                        <div class="savedgametimestamp">
-                            <p>03/07/2023</p>
-                            <p>22:31:45</p>
-                        </div>
-
-                        <div class="savedchapter">
-                            <p>CHAPTER 5</p>
-                            <p>- STANDARD -</p>
-                        </div>
-
-                        <div class="savedlocation">
-                            <p>Village / Farm / Head for the extraction point</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Conitnue Gamme  -->
-            <div class="continuegame" style="display: none;">
-                <div>
-                    <p>There is no saved game</p>
-                    <p id="ok">OK</p>
-                </div>
-            </div>
-
-            <!-- Start Game  -->
-            <div class="gamemode" style="display: none;">
-                <div class="modes">
-                    <p class="mode">GAME MODE</p>
-                    <p class="mode demo">ASSISTED</p>
-                    <p class="mode demo">STANDARD</p>
-                    <p class="mode demo">HARDCORE</p>
-                </div>
-
-                <div class="navbtn">
-                    <p>Start a new game</p>
-                    <div>
-
-                        <div>
-                            <img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABw0lEQVR4nMVUS0sCURS+lmbhs/JRSEmZppmPIRIfUSipOYYa5QTSwp3ac1vuol3QqraZ/dIT55JDOXPHGUlafHA59zvnu/e8SOfzHCYJ8q8Crfc65C9T4E+ugn3ZAgajngLPaCtcpSlnLIHiTQasTjMQQhRhdZkpV7VA+0OAWGlzZGAyhHgpCO2+MFpgnODkGxwfVBbAr7Kcp6Z1NAC+VKfTMXlHt3vyAlgszCfL0RNyiU5u3yK7Jk7Tr8KLAtgtSt/PNDjRKSnEFLnYXRIBbDslp4uXY2i+VqH5VoPGM6/I9ae8UgGb28J0cHjnKeewkxJft+CxMfk4JxIBw6ye6bB7sk05oYN1COc26HmnssXkYyxNAvWnIuUE99cgnPPR89ljQZuAfUk+RRaHiTml2DHyKbKqL3K0GKD31W4OuHKIotbNUVskH1BfZCyeHLn6kKX3vsSKJEDlPivfptdpdYOGE5s4jUBSiILRNCPa5yxGasO74am2uc3Q6tW1rwqiEkd3jFUxAO6acYNz5ZCKdd0XIM5rF+F4let6ANyKmM9RgZEznBZVArTwvTrtLuwa7G0cIASe0Ybd8rOgmgX+AhMX+AK05uC1oMu1YAAAAABJRU5ErkJggg==" />
-                            <p>Confirm</p>
-                        </div>
-                        <div onclick="hidegamemode()">
-                            <img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
-                            <p>Back</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Result  -->
-            <div class="results" style="display: none;">
-
-                <div class="result">
-                    <div class="chapter">
-                        <h2>RESULTS</h2>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-chevron-left">
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg> CHAPTER 5 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="rlts">
-                        <p>GAME MODE</p>
-                        <p>STANDARD</p>
-                    </div>
-                    <div class="rlts">
-                        <p>CHAPTER PLAY TIME</p>
-                        <p>01:05:17</p>
-                    </div>
-                    <div class="rlts">
-                        <p>ENEMIES KILLED</p>
-                        <p>57</p>
-                    </div>
-                    <div class="rlts">
-                        <p>DEATHS</p>
-                        <p>4</p>
-                    </div>
-                    <div class="rlts">
-                        <p>ACCURACY</p>
-                        <p>69.9%</p>
-                    </div>
-                    <div class="rlts">
-                        <p>TIME DAMAGED</p>
-                        <p>19</p>
-                    </div>
-                </div>
-                <div class="chapterend">
-                    <p>CHAPTER</p>
-                    <p>END</p>
-                </div>
-                <div class="navbtn">
-                    <div>
-                        <div onclick="hideresults()">
-                            <img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
-                            <p>Back</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="navbtn">
-                <p id="downtext">Continue playing from your last save</p>
-                <div>
-
-                    <div>
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABw0lEQVR4nMVUS0sCURS+lmbhs/JRSEmZppmPIRIfUSipOYYa5QTSwp3ac1vuol3QqraZ/dIT55JDOXPHGUlafHA59zvnu/e8SOfzHCYJ8q8Crfc65C9T4E+ugn3ZAgajngLPaCtcpSlnLIHiTQasTjMQQhRhdZkpV7VA+0OAWGlzZGAyhHgpCO2+MFpgnODkGxwfVBbAr7Kcp6Z1NAC+VKfTMXlHt3vyAlgszCfL0RNyiU5u3yK7Jk7Tr8KLAtgtSt/PNDjRKSnEFLnYXRIBbDslp4uXY2i+VqH5VoPGM6/I9ae8UgGb28J0cHjnKeewkxJft+CxMfk4JxIBw6ye6bB7sk05oYN1COc26HmnssXkYyxNAvWnIuUE99cgnPPR89ljQZuAfUk+RRaHiTml2DHyKbKqL3K0GKD31W4OuHKIotbNUVskH1BfZCyeHLn6kKX3vsSKJEDlPivfptdpdYOGE5s4jUBSiILRNCPa5yxGasO74am2uc3Q6tW1rwqiEkd3jFUxAO6acYNz5ZCKdd0XIM5rF+F4let6ANyKmM9RgZEznBZVArTwvTrtLuwa7G0cIASe0Ybd8rOgmgX+AhMX+AK05uC1oMu1YAAAAABJRU5ErkJggg==" />
-                        <p>Confirm</p>
-                    </div>
-                    <div onclick="showmode1()">
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
-                        <p>Back</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Online Store  -->
-        <div id="store" style="display: none;">
-            <div class="menulist" style="float: left;">
-                <p id="extra_cotent_shop" onclick="showcontentshop()">EXTRA CONTENT SHOP</p>
-                <p id="concept_arts" onclick="showcontentshop()">CONCEPT ARTS</p>
-                <p id="models" onclick="showcontentshop()">MODELS</p>
-                <p id="challenges" onclick="showcontentshop()">CHALLENGES</p>
-                <p id="credits" onclick="showcontentshop()">CREDITS</p>
-            </div>
-
-            <div class="contentnotfound" style="display: none;">
-                <div>
-                    <h3>Content not available</h3>
-                    <p onclick="hidecontentshop()">OK</p>
-                </div>
-            </div>
-
-            <div class="navbtn">
-                <p id="storedown">Use Completion Points(CP) to purchase bonus content.</p>
-                <div>
-                    <div>
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABw0lEQVR4nMVUS0sCURS+lmbhs/JRSEmZppmPIRIfUSipOYYa5QTSwp3ac1vuol3QqraZ/dIT55JDOXPHGUlafHA59zvnu/e8SOfzHCYJ8q8Crfc65C9T4E+ugn3ZAgajngLPaCtcpSlnLIHiTQasTjMQQhRhdZkpV7VA+0OAWGlzZGAyhHgpCO2+MFpgnODkGxwfVBbAr7Kcp6Z1NAC+VKfTMXlHt3vyAlgszCfL0RNyiU5u3yK7Jk7Tr8KLAtgtSt/PNDjRKSnEFLnYXRIBbDslp4uXY2i+VqH5VoPGM6/I9ae8UgGb28J0cHjnKeewkxJft+CxMfk4JxIBw6ye6bB7sk05oYN1COc26HmnssXkYyxNAvWnIuUE99cgnPPR89ljQZuAfUk+RRaHiTml2DHyKbKqL3K0GKD31W4OuHKIotbNUVskH1BfZCyeHLn6kKX3vsSKJEDlPivfptdpdYOGE5s4jUBSiILRNCPa5yxGasO74am2uc3Q6tW1rwqiEkd3jFUxAO6acYNz5ZCKdd0XIM5rF+F4let6ANyKmM9RgZEznBZVArTwvTrtLuwa7G0cIASe0Ybd8rOgmgX+AhMX+AK05uC1oMu1YAAAAABJRU5ErkJggg==" />
-                        <p>Confirm</p>
-                    </div>
-                    <div onclick="hidestore()">
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
-                        <p>Back</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- Options  -->
-
-        <div id="options" style="display: none;">
-            <div class="seetingsrow">
-                <p><img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAACl0lEQVR4nO3XTYhWZRQH8OtHmkKEpSCJIDKLaUDMXCnDBC10INvMWEL4QS4EF7MJP2gWihiibnRRMIFFkbiohZgLFy2iSLACTQUTYxA/mkUwoIhokv3iGU403bnvfd93eue1xf3Ds3nOef7nf597zrnnZlmFChUq/AuYjsXowRZsw27swUF8gH1YmU01MCeEvItTuIqHGsOf+AzzWi0q3c47+A6PxgUcxbf4FHuxGd3pprAUi5IYzEQXjofIG3jlv4qahU04G6QJN/ERtuJFTJsE7+v4DX/EQzXHgaexE7dD1AiOYvVkBBUBC/FV8H+IGY0e7Mf1OPhTvLJZ2RQAT0U+JnxRGgfP4kQ4p/zY0KrbKkOKgSMRd6iW0xL8HHn2PuZmbYZ/LmdV3jAbl/AA60sI9uPz1GKyYnt32MevIbyZemQDAntD4Ia8YU0YttchSJWc8EwN+1th/yWSP7Weu7F3oAGBB8K3I29IvS2hq0UCB3OVmkSONCDwIq4VGQ4F8XNTIHB69M3Ldbg74uzhIuMn+L1exTYh8GR8h3fEq76V8rMO967CAgnjmfSUZQRNChzFMH7FY/yAvjrc58J/YjHhPH5socDBcXvP4+sQuqKkxY21t1qBk/LTUyEwAQOxP5AVIEYyhWkQXTxNJseKDtcQuCymlL/XwpIbTMn/feyvqcF7Ib5cE2sA8+Pwe00IzOPLnMAifFwkAJ01qzccusquP+e7MV5HfvWP48rb3sbyEs40aiW8XMvh1XB4I3sCwJU0jZc5pIkloaetyrKx2C9F7H1lTuvCqbet6rKx2IcjdmeZ0wLcSZ8irI3/iHasrbiPbxp5kj7c034MT5hcSkS+EFW6rU3rtTSHNpUTFSpUqFAh+1/hL2OKqkA5kcmzAAAAAElFTkSuQmCC">
-                </p>
-                <div id="controls">CONTROLS</div>
-                <div id="camera">CAMERA</div>
-                <div id="display">DISPLAY</div>
-                <div id="graphics">GRAPHICS</div>
-                <div id="language">LANGUAGE</div>
-                <div id="audio">AUDIO</div>
-                <div id="accessibility">ACCESSIBILITY</div>
-                <div id="server">SERVER</div>
-                <p><img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC20lEQVR4nO2XW4hPURTGz2DG5UGRBzFTk2YYUy6RJIO8aMQ8eGBM5DZlSlGu44VJISbigTIl0SC3F3nwQEkoIRIxySW3lHJpkLuf1sw3dWznnP/5/zNnHpyv9sNZ+9trffuy1t7H81KkSPEfABgLbAL2AtuAjUA9sBRYCEwGCoG8pIX1A5qBX8TDF6AFOA2sByYBvTtL3BTgqcQdBoYDPSR6MDBEK1sBLAAagEPAJeCtT/Q32VYCRf9CWJ6C/QBeA1U5+igHaoEDwHOJtcleBuYD+bmI6w40ydk5YGDWTgIAdAMmAruBV/JvotcAveI6KQBOanBzTjOMH8cS67ZiPQZmxRm4TwN2JZGNtB+DGuCZ4to57xtGniDS0c4W5gLoo/Jl5/MeUBxEqpbAyr86/+TNBE742nFgh5UTh7fC4R0DdgIjI3zPAT5r6wvczhIJ3JpB4GrxngA3NOPvsi338Y7IdkXJZtyf4lZE+F+mcdOCOh+Y+pgCF/ls5cBHoNWy1RE41Mez0mJoivBvvgyrgjob1VmSjUCDVspQGCFwvGxbvBAA/cXZHpUo67JcwSLgvW6PfEfgBqBO97gdi/MmIkNmfwUOhhXTl8DVLM7gTW2vZWCdj9ch0ErII+CNAp8CSsP8a6yNORvWuUfBijMIvKbsvK/vtQ4vaIvHaKUf2o0VIfC6TTys0y5+Q32cLQZGKTvv+IMGCZT9guyBCyDOGdvJqDNgL5hbcQQarLjLtiRMoJ1NKx3AJ+BD1DUK7NcLKPg282VzWUyBpXL4wm4FR6ALE1gTJk5jN4s7IIxgZ8XQENA3Ti/pEY59ruzD9F2l745mE5sd53VkBV/xy6NIdkO0eF0A2q88w9QoktUtw+hE1Xltse3/xlAdRSoTqTFRdV5b7OmKPSMT8aKK8GL9eyTRKoG7wLvQJHGy0167SaM11gtbInvaUuv/N4k2DxiU1ZlIkSJFihRel+I3lHkYN+pRq2kAAAAASUVORK5CYII=">
-                </p>
-            </div>
-
-
-            <div class="controls" style="display: block;">
-                <div class="ctrls">
-                    <p>Button Icon Type</p>
-                    <p>Type B</p>
-                </div>
-                <div class="ctrls">
-                    <p>Control Settings</p>
-                </div>
-                <div class="ctrls">
-                    <p>Control Type</p>
-                    <p>A-1</p>
-                </div>
-                <div class="ctrls">
-                    <p>Run Type</p>
-                    <p>Toggle</p>
-                </div>
-                <div class="ctrls">
-                    <p>Crouch Type</p>
-                    <p>Toggle</p>
-                </div>
-                <div class="ctrls">
-                    <p>Quick Turn Type</p>
-                    <p>(Run)</p>
-                </div>
-                <div class="ctrls">
-                    <p>Parry Type </p>
-                    <p>Off</p>
-                </div>
-                <div class="ctrls">
-                    <p>Repeated Input Type </p>
-                    <p>Tab Repeatedly</p>
-                </div>
-                <div class="ctrls">
-                    <p>Key Bindings <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-external-link">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg></p>
-                </div>
-                <div class="ctrls">
-                    <p>Aim Assist Type </p>
-                    <p>Off</p>
-                </div>
-            </div>
-
-
-            <div class="camera" style="display: none;">
-                <div class="camsettting">
-                    <p>Cammera Inversion (Controller)</p>
-                </div>
-                <div class="camsettting">
-                    <p>Normmal Gameplay</p>
-                    <p>None</p>
-                </div>
-                <div class="camsettting">
-                    <p>When Aiming</p>
-                    <p>None</p>
-                </div>
-                <div class="camsettting">
-                    <p>Detailed View</p>
-                    <p>None</p>
-                </div>
-                <div class="camsettting">
-                    <p>Maximum Camera Speed (Controller)</p>
-                </div>
-                <div class="camsettting">
-                    <p>Normal Gameplay</p>
-                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-minus">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg></p>
-                </div>
-                <div class="camsettting">
-                    <p>Whhen Aiming</p>
-                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-minus">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg></p>
-                </div>
-            </div>
-
-            <div class="display" style="display: none;">
-                <div class="dpysetting">
-                    <p>HDR Mode</p>
-                    <p>Off</p>
-                </div>
-                <div class="dpysetting">
-                    <p>Brightness <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-external-link">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg></p>
-                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-minus">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg></p>
-                </div>
-                <div class="dpysetting">
-                    <p>Display Area <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-external-link">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg></p>
-                </div>
-                <div class="dpysetting">
-                    <p>Tutorial Messages</p>
-                    <p>On</p>
-                </div>
-                <div class="dpysetting">
-                    <p>HUD</p>
-                    <p>On</p>
-                </div>
-                <div class="dpysetting">
-                    <p>Dot Display</p>
-                    <p>Off</p>
-                </div>
-                <div class="dpysetting">
-                    <p>Damage Display</p>
-                    <p>Strong</p>
-                </div>
-                <div class="dpysetting">
-                    <p>Hub Opacity</p>
-                    <p>Low</p>
-                </div>
-                <div class="dpysetting">
-                    <p>Sight Settings</p>
-                </div>
-                <div class="dpysetting">
-                    <p>Aim Color</p>
-                    <p>White</p>
-                </div>
-            </div>
-
-            <div class="graphics" style="display: none;">
-                <div class="gpusetting">
-                    <p>PC Specifications</p>
-                </div>
-                <div class="gpusetting">
-                    <p>Presets <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-external-link">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg></p>
-                </div>
-                <div class="gpusetting">
-                    <p>Screen Resolution</p>
-                    <p>2560 X 1440</p>
-                </div>
-                <div class="gpusetting">
-                    <p>Refresh Rate</p>
-                    <p>60.00 Hz</p>
-                </div>
-                <div class="gpusetting">
-                    <p>Frame Rate</p>
-                    <p>60</p>
-                </div>
-                <div class="gpusetting">
-                    <p>Display Mode</p>
-                    <p>Full Screen</p>
-                </div>
-                <div class="gpusetting">
-                    <p>Vertical Synchronization</p>
-                    <p>On</p>
-                </div>
-                <div class="gpusetting">
-                    <p>Cinematics Resolution</p>
-                    <p>4K</p>
-                </div>
-                <div class="gpusetting">
-                    <p>Ray Tracingn</p>
-                    <p>High</p>
-                </div>
-            </div>
-
-            <div class="language" style="display: none;">
-                <div class="langsetting">
-                    <p>Voice Language</p>
-                    <p>English</p>
-                </div>
-                <div class="langsetting">
-                    <p>Display Language</p>
-                    <p>English</p>
-                </div>
-                <div class="langsetting">
-                    <p>Sutitles</p>
-                    <p>Off</p>
-                </div>
-                <div class="langsetting">
-                    <p>Closed Caption Sutitles</p>
-                    <p>Off</p>
-                </div>
-                <div class="langsetting">
-                    <p>Sutitles Size</p>
-                    <p>Medium</p>
-                </div>
-                <div class="langsetting">
-                    <p>Sutitles Background Opacity</p>
-                    <p>Off</p>
-                </div>
-                <div class="langsetting">
-                    <p>Sutitles color</p>
-                    <p>White</p>
-                </div>
-                <div class="langsetting">
-                    <p>Speaker Name Display</p>
-                    <p>Off</p>
-                </div>
-                <div class="langsetting">
-                    <p>Speaker Name Color</p>
-                    <p>White</p>
-                </div>
-            </div>
-
-            <div class="audio" style="display: none;">
-                <div class="adosetting">
-                    <p>Volume Settings</p>
-                </div>
-                <div class="adosetting">
-                    <p>Master Volume</p>
-                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-minus">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg></p>
-                </div>
-                <div class="adosetting">
-                    <p>Voice Volume</p>
-                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-minus">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg></p>
-                </div>
-                <div class="adosetting">
-                    <p>BGM Volume</p>
-                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-minus">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg></p>
-                </div>
-                <div class="adosetting">
-                    <p>Sound Effect Volume</p>
-                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-minus">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg></p>
-                </div>
-                <div class="adosetting">
-                    <p>Menu Volume</p>
-                    <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-minus">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg></p>
-                </div>
-                <div class="adosetting">
-                    <p>Ballistic Impact Volume</p>
-                    <p>Normal</p>
-                </div>
-                <div class="adosetting">
-                    <p>Audio Output Device</p>
-                    <p>TV</p>
-                </div>
-                <div class="adosetting">
-                    <p>Speaker Orientation</p>
-                    <p>Off</p>
-                </div>
-            </div>
-
-            <div class="navbtn">
-                <div>
-                    <div>
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAACdElEQVR4nGNgIALU19uztOfaGZbEmcSkB+sXgmgQHyTOQCnIizLy8bZVWmqqI3FLVJDzHysL038GBob/IBrEN9ORuOljp7QkJ8LYm2TDC+JMtX3tVTaKCnJ9AxlKCIsKcn3zc1BaXxZrrkmUBTnhBp5GGmK3iDGcAQ3rq4nczQzTD8BrQUaooZ+SjMBrcixggGKQ/swwPV+cQWSgLnaHEgsYoNhAXex2UbyxBoYloDjApkGIn+O/iADnf2YmRgw5kDhIHps+UBxhpCJckRzvq/1/WpXLf1sjGRRxLSVhsHisjxbOxJAXaeAFt8TbVnEZnpTzf0qF8/+mLOv/TIwI3xTFGP+fXOEM9g0uvT52SovBFsxMM2Y11ZbAm5pgvjFQF4NErjQ/mB/poYE3bsx0JG6AM2xLga2RqCDnXwL5AOyb8kQzMD8nwvD/xDKn/4J82OMDhsWEuP62F1rrMxTHmsTCcjI+HAf1jb2xLJgOdVUnqIeNlfl/YbRJDENmqF4RMckS5htQPEwodfzPx81GVHJOD9UvZADZBLKRGA1xUN8EOakSpR5kblGccSQDqDQlFCcw7GQmB7bEXEeSKEvgcbIqNJTZRFviJi0ssdCTug6vDkDFOS0s8bZVWoQoeSOMvYkp1k20Jf5XJJn911EWISahfMuNMPRAKVqgZc1/amE/e+W1GAUkqMIBlZ7UsMBQXexWRaypGi3rk1fZ4Xo+hGtGTTGiUhsDGtZXE7mTFW7gz0AMAFU4oDgiqY63V16LM4jwAVB9ACquQaUpKGPBSgYQDeKDxL1tlRZjpCJyACjDgnJuSaxpFLjdFWsaBeKDxIkxAAAwGy700m9SlwAAAABJRU5ErkJggg==">
-                        <p>Reset All</p>
-                    </div>
-                    <div>
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAADIklEQVR4nGNgIALY1+9n8a7crONftdndo2BZPIgG8UHiDJQCr8IVjg6p03ZZRrXeUbWOeCOj6/RTVNHgP4gG8UHiIHn34tUOJBvuXbFGyTFtxiF12+g3LGyc/xkYGHBiFjbO/+p2MW+c0qcf9C/frkCUBZ5Fy1ytYzrvs3Hx4TWcAQ2zcfH/t4rueOiWt8gVrwVuectcjQMrnjMyMZNkAQMUMzGx/DcOrHzuXrDUBWcQWcd0PAApJMcCBiSLrGM6H2ANOlAcoAeRoLTGf8vIVjDmEZLGMFDbJRUsp2DkhSLOzi3w3zFt+gGMVKRmG/UG02WM/23je//7VW39bxJUiSInLKcLFvcoXAE2FF2vul3MW/f85YhUB0qGuFIRn5jCf9+KTf/9qraAfQYSY2Rk/G+XOAFsibyBO85U55g6fQfYgrS0M6wWkS138IWzrlsG2EDrmA4wX1bXGcy3ie0C+xaXPsuotjvgDOtfs1UXlLHwWcLKzv3fPX8J2GBxFdP/rjkL/vtUbPzPKyqPNxGo20S/9q3Zrs0AKiKkte1/Eko1MjqOYEu8ileDaU3HBIIpTUbH8adPxTY3Bvei5QmiikYENYDyjkfBMrAFvpVb/nPwCBHUAzIXZD4DyCZpHYcfhDQomweCLYAFm55HNmGf6Dr99Kve4sIAKk0JxQm3oNR/79J1/73L1oNTGyjZgnwDS20E4yQ0dBWzZWTLbdyKGcEZDuR6ddtosJiiiS+Y75g6DZzDCaYuQvkElJtBBrrmLvzPzMoBjx/HtOlgcRXLEML5BARA9QGouEZXCIpcz6JVYMOkte1R5CTULMDioCDkEpDADCq72LcehUvtUYoWUH0AKq5RIzsIHFSGPoVYM52+Vy5YXsUiBEvZNWM/RgEJKjWtYzvvUasU9qreIo+1uAfVA6D6hFyLmKD1iUfeYme8FZdH0XJn65iu+9hKVgY8GKTeKrrjkXvOQuwVFragA9UHoMRAXB0f9wakHmcQ4QOgVAdKhqD0rm4T9RrSWjEE52RQRgOJg+Q9ClehpiJyACjDgnIuqAgCtbtANIgPEifGAABWL44yFFo2mAAAAABJRU5ErkJggg==">
-                        <p>Reset Category</p>
-                    </div>
-                    <div onclick="showmode2()">
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
-                        <p>Back</p>
-                    </div>
+                <div onclick="showmode1()">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
+                    <p>Back</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="phone">
-        <h2>Please Open this site in PC/Laptop for best results.</h2>
-        <p id="open">Open Anyway</p>
+    <!-- Online Store  -->
+    <div id="store" style="display: none;">
+        <div class="menulist" style="float: left;">
+            <p id="extra_cotent_shop" onclick="showcontentshop()">EXTRA CONTENT SHOP</p>
+            <p id="concept_arts" onclick="showcontentshop()">CONCEPT ARTS</p>
+            <p id="models" onclick="showcontentshop()">MODELS</p>
+            <p id="challenges" onclick="showcontentshop()">CHALLENGES</p>
+            <p id="credits" onclick="showcontentshop()">CREDITS</p>
+        </div>
+
+        <div class="contentnotfound" style="display: none;">
+            <div>
+                <h3>Content not available</h3>
+                <p onclick="hidecontentshop()">OK</p>
+            </div>
+        </div>
+
+        <div class="navbtn">
+            <p id="storedown">Use Completion Points(CP) to purchase bonus content.</p>
+            <div>
+                <div>
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABw0lEQVR4nMVUS0sCURS+lmbhs/JRSEmZppmPIRIfUSipOYYa5QTSwp3ac1vuol3QqraZ/dIT55JDOXPHGUlafHA59zvnu/e8SOfzHCYJ8q8Crfc65C9T4E+ugn3ZAgajngLPaCtcpSlnLIHiTQasTjMQQhRhdZkpV7VA+0OAWGlzZGAyhHgpCO2+MFpgnODkGxwfVBbAr7Kcp6Z1NAC+VKfTMXlHt3vyAlgszCfL0RNyiU5u3yK7Jk7Tr8KLAtgtSt/PNDjRKSnEFLnYXRIBbDslp4uXY2i+VqH5VoPGM6/I9ae8UgGb28J0cHjnKeewkxJft+CxMfk4JxIBw6ye6bB7sk05oYN1COc26HmnssXkYyxNAvWnIuUE99cgnPPR89ljQZuAfUk+RRaHiTml2DHyKbKqL3K0GKD31W4OuHKIotbNUVskH1BfZCyeHLn6kKX3vsSKJEDlPivfptdpdYOGE5s4jUBSiILRNCPa5yxGasO74am2uc3Q6tW1rwqiEkd3jFUxAO6acYNz5ZCKdd0XIM5rF+F4let6ANyKmM9RgZEznBZVArTwvTrtLuwa7G0cIASe0Ybd8rOgmgX+AhMX+AK05uC1oMu1YAAAAABJRU5ErkJggg==" />
+                    <p>Confirm</p>
+                </div>
+                <div onclick="hidestore()">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
+                    <p>Back</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Options  -->
+
+    <div id="options" style="display: none;">
+        <div class="seetingsrow">
+            <p><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAACl0lEQVR4nO3XTYhWZRQH8OtHmkKEpSCJIDKLaUDMXCnDBC10INvMWEL4QS4EF7MJP2gWihiibnRRMIFFkbiohZgLFy2iSLACTQUTYxA/mkUwoIhokv3iGU403bnvfd93eue1xf3Ds3nOef7nf597zrnnZlmFChUq/AuYjsXowRZsw27swUF8gH1YmU01MCeEvItTuIqHGsOf+AzzWi0q3c47+A6PxgUcxbf4FHuxGd3pprAUi5IYzEQXjofIG3jlv4qahU04G6QJN/ERtuJFTJsE7+v4DX/EQzXHgaexE7dD1AiOYvVkBBUBC/FV8H+IGY0e7Mf1OPhTvLJZ2RQAT0U+JnxRGgfP4kQ4p/zY0KrbKkOKgSMRd6iW0xL8HHn2PuZmbYZ/LmdV3jAbl/AA60sI9uPz1GKyYnt32MevIbyZemQDAntD4Ia8YU0YttchSJWc8EwN+1th/yWSP7Weu7F3oAGBB8K3I29IvS2hq0UCB3OVmkSONCDwIq4VGQ4F8XNTIHB69M3Ldbg74uzhIuMn+L1exTYh8GR8h3fEq76V8rMO967CAgnjmfSUZQRNChzFMH7FY/yAvjrc58J/YjHhPH5socDBcXvP4+sQuqKkxY21t1qBk/LTUyEwAQOxP5AVIEYyhWkQXTxNJseKDtcQuCymlL/XwpIbTMn/feyvqcF7Ib5cE2sA8+Pwe00IzOPLnMAifFwkAJ01qzccusquP+e7MV5HfvWP48rb3sbyEs40aiW8XMvh1XB4I3sCwJU0jZc5pIkloaetyrKx2C9F7H1lTuvCqbet6rKx2IcjdmeZ0wLcSZ8irI3/iHasrbiPbxp5kj7c034MT5hcSkS+EFW6rU3rtTSHNpUTFSpUqFAh+1/hL2OKqkA5kcmzAAAAAElFTkSuQmCC">
+            </p>
+            <div id="controls">CONTROLS</div>
+            <div id="camera">CAMERA</div>
+            <div id="display">DISPLAY</div>
+            <div id="graphics">GRAPHICS</div>
+            <div id="language">LANGUAGE</div>
+            <div id="audio">AUDIO</div>
+            <div id="accessibility">ACCESSIBILITY</div>
+            <div id="server">SERVER</div>
+            <p><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC20lEQVR4nO2XW4hPURTGz2DG5UGRBzFTk2YYUy6RJIO8aMQ8eGBM5DZlSlGu44VJISbigTIl0SC3F3nwQEkoIRIxySW3lHJpkLuf1sw3dWznnP/5/zNnHpyv9sNZ+9trffuy1t7H81KkSPEfABgLbAL2AtuAjUA9sBRYCEwGCoG8pIX1A5qBX8TDF6AFOA2sByYBvTtL3BTgqcQdBoYDPSR6MDBEK1sBLAAagEPAJeCtT/Q32VYCRf9CWJ6C/QBeA1U5+igHaoEDwHOJtcleBuYD+bmI6w40ydk5YGDWTgIAdAMmAruBV/JvotcAveI6KQBOanBzTjOMH8cS67ZiPQZmxRm4TwN2JZGNtB+DGuCZ4to57xtGniDS0c4W5gLoo/Jl5/MeUBxEqpbAyr86/+TNBE742nFgh5UTh7fC4R0DdgIjI3zPAT5r6wvczhIJ3JpB4GrxngA3NOPvsi338Y7IdkXJZtyf4lZE+F+mcdOCOh+Y+pgCF/ls5cBHoNWy1RE41Mez0mJoivBvvgyrgjob1VmSjUCDVspQGCFwvGxbvBAA/cXZHpUo67JcwSLgvW6PfEfgBqBO97gdi/MmIkNmfwUOhhXTl8DVLM7gTW2vZWCdj9ch0ErII+CNAp8CSsP8a6yNORvWuUfBijMIvKbsvK/vtQ4vaIvHaKUf2o0VIfC6TTys0y5+Q32cLQZGKTvv+IMGCZT9guyBCyDOGdvJqDNgL5hbcQQarLjLtiRMoJ1NKx3AJ+BD1DUK7NcLKPg282VzWUyBpXL4wm4FR6ALE1gTJk5jN4s7IIxgZ8XQENA3Ti/pEY59ruzD9F2l745mE5sd53VkBV/xy6NIdkO0eF0A2q88w9QoktUtw+hE1Xltse3/xlAdRSoTqTFRdV5b7OmKPSMT8aKK8GL9eyTRKoG7wLvQJHGy0167SaM11gtbInvaUuv/N4k2DxiU1ZlIkSJFihRel+I3lHkYN+pRq2kAAAAASUVORK5CYII=">
+            </p>
+        </div>
+
+
+        <div class="controls" style="display: block;">
+            <div class="ctrls">
+                <p>Button Icon Type</p>
+                <p>Type B</p>
+            </div>
+            <div class="ctrls">
+                <p>Control Settings</p>
+            </div>
+            <div class="ctrls">
+                <p>Control Type</p>
+                <p>A-1</p>
+            </div>
+            <div class="ctrls">
+                <p>Run Type</p>
+                <p>Toggle</p>
+            </div>
+            <div class="ctrls">
+                <p>Crouch Type</p>
+                <p>Toggle</p>
+            </div>
+            <div class="ctrls">
+                <p>Quick Turn Type</p>
+                <p>(Run)</p>
+            </div>
+            <div class="ctrls">
+                <p>Parry Type </p>
+                <p>Off</p>
+            </div>
+            <div class="ctrls">
+                <p>Repeated Input Type </p>
+                <p>Tab Repeatedly</p>
+            </div>
+            <div class="ctrls">
+                <p>Key Bindings <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-external-link">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg></p>
+            </div>
+            <div class="ctrls">
+                <p>Aim Assist Type </p>
+                <p>Off</p>
+            </div>
+        </div>
+
+
+        <div class="camera" style="display: none;">
+            <div class="camsettting">
+                <p>Cammera Inversion (Controller)</p>
+            </div>
+            <div class="camsettting">
+                <p>Normmal Gameplay</p>
+                <p>None</p>
+            </div>
+            <div class="camsettting">
+                <p>When Aiming</p>
+                <p>None</p>
+            </div>
+            <div class="camsettting">
+                <p>Detailed View</p>
+                <p>None</p>
+            </div>
+            <div class="camsettting">
+                <p>Maximum Camera Speed (Controller)</p>
+            </div>
+            <div class="camsettting">
+                <p>Normal Gameplay</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg></p>
+            </div>
+            <div class="camsettting">
+                <p>Whhen Aiming</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg></p>
+            </div>
+        </div>
+
+        <div class="display" style="display: none;">
+            <div class="dpysetting">
+                <p>HDR Mode</p>
+                <p>Off</p>
+            </div>
+            <div class="dpysetting">
+                <p>Brightness <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-external-link">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg></p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg></p>
+            </div>
+            <div class="dpysetting">
+                <p>Display Area <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-external-link">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg></p>
+            </div>
+            <div class="dpysetting">
+                <p>Tutorial Messages</p>
+                <p>On</p>
+            </div>
+            <div class="dpysetting">
+                <p>HUD</p>
+                <p>On</p>
+            </div>
+            <div class="dpysetting">
+                <p>Dot Display</p>
+                <p>Off</p>
+            </div>
+            <div class="dpysetting">
+                <p>Damage Display</p>
+                <p>Strong</p>
+            </div>
+            <div class="dpysetting">
+                <p>Hub Opacity</p>
+                <p>Low</p>
+            </div>
+            <div class="dpysetting">
+                <p>Sight Settings</p>
+            </div>
+            <div class="dpysetting">
+                <p>Aim Color</p>
+                <p>White</p>
+            </div>
+        </div>
+
+        <div class="graphics" style="display: none;">
+            <div class="gpusetting">
+                <p>PC Specifications</p>
+            </div>
+            <div class="gpusetting">
+                <p>Presets <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-external-link">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg></p>
+            </div>
+            <div class="gpusetting">
+                <p>Screen Resolution</p>
+                <p>2560 X 1440</p>
+            </div>
+            <div class="gpusetting">
+                <p>Refresh Rate</p>
+                <p>60.00 Hz</p>
+            </div>
+            <div class="gpusetting">
+                <p>Frame Rate</p>
+                <p>60</p>
+            </div>
+            <div class="gpusetting">
+                <p>Display Mode</p>
+                <p>Full Screen</p>
+            </div>
+            <div class="gpusetting">
+                <p>Vertical Synchronization</p>
+                <p>On</p>
+            </div>
+            <div class="gpusetting">
+                <p>Cinematics Resolution</p>
+                <p>4K</p>
+            </div>
+            <div class="gpusetting">
+                <p>Ray Tracingn</p>
+                <p>High</p>
+            </div>
+        </div>
+
+        <div class="language" style="display: none;">
+            <div class="langsetting">
+                <p>Voice Language</p>
+                <p>English</p>
+            </div>
+            <div class="langsetting">
+                <p>Display Language</p>
+                <p>English</p>
+            </div>
+            <div class="langsetting">
+                <p>Sutitles</p>
+                <p>Off</p>
+            </div>
+            <div class="langsetting">
+                <p>Closed Caption Sutitles</p>
+                <p>Off</p>
+            </div>
+            <div class="langsetting">
+                <p>Sutitles Size</p>
+                <p>Medium</p>
+            </div>
+            <div class="langsetting">
+                <p>Sutitles Background Opacity</p>
+                <p>Off</p>
+            </div>
+            <div class="langsetting">
+                <p>Sutitles color</p>
+                <p>White</p>
+            </div>
+            <div class="langsetting">
+                <p>Speaker Name Display</p>
+                <p>Off</p>
+            </div>
+            <div class="langsetting">
+                <p>Speaker Name Color</p>
+                <p>White</p>
+            </div>
+        </div>
+
+        <div class="audio" style="display: none;">
+            <div class="adosetting">
+                <p>Volume Settings</p>
+            </div>
+            <div class="adosetting">
+                <p>Master Volume</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg></p>
+            </div>
+            <div class="adosetting">
+                <p>Voice Volume</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg></p>
+            </div>
+            <div class="adosetting">
+                <p>BGM Volume</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg></p>
+            </div>
+            <div class="adosetting">
+                <p>Sound Effect Volume</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg></p>
+            </div>
+            <div class="adosetting">
+                <p>Menu Volume</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg><input type="range" class="rangectrl"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg></p>
+            </div>
+            <div class="adosetting">
+                <p>Ballistic Impact Volume</p>
+                <p>Normal</p>
+            </div>
+            <div class="adosetting">
+                <p>Audio Output Device</p>
+                <p>TV</p>
+            </div>
+            <div class="adosetting">
+                <p>Speaker Orientation</p>
+                <p>Off</p>
+            </div>
+        </div>
+
+        <div class="navbtn">
+            <div>
+                <div>
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAACdElEQVR4nGNgIALU19uztOfaGZbEmcSkB+sXgmgQHyTOQCnIizLy8bZVWmqqI3FLVJDzHysL038GBob/IBrEN9ORuOljp7QkJ8LYm2TDC+JMtX3tVTaKCnJ9AxlKCIsKcn3zc1BaXxZrrkmUBTnhBp5GGmK3iDGcAQ3rq4nczQzTD8BrQUaooZ+SjMBrcixggGKQ/swwPV+cQWSgLnaHEgsYoNhAXex2UbyxBoYloDjApkGIn+O/iADnf2YmRgw5kDhIHps+UBxhpCJckRzvq/1/WpXLf1sjGRRxLSVhsHisjxbOxJAXaeAFt8TbVnEZnpTzf0qF8/+mLOv/TIwI3xTFGP+fXOEM9g0uvT52SovBFsxMM2Y11ZbAm5pgvjFQF4NErjQ/mB/poYE3bsx0JG6AM2xLga2RqCDnXwL5AOyb8kQzMD8nwvD/xDKn/4J82OMDhsWEuP62F1rrMxTHmsTCcjI+HAf1jb2xLJgOdVUnqIeNlfl/YbRJDENmqF4RMckS5htQPEwodfzPx81GVHJOD9UvZADZBLKRGA1xUN8EOakSpR5kblGccSQDqDQlFCcw7GQmB7bEXEeSKEvgcbIqNJTZRFviJi0ssdCTug6vDkDFOS0s8bZVWoQoeSOMvYkp1k20Jf5XJJn911EWISahfMuNMPRAKVqgZc1/amE/e+W1GAUkqMIBlZ7UsMBQXexWRaypGi3rk1fZ4Xo+hGtGTTGiUhsDGtZXE7mTFW7gz0AMAFU4oDgiqY63V16LM4jwAVB9ACquQaUpKGPBSgYQDeKDxL1tlRZjpCJyACjDgnJuSaxpFLjdFWsaBeKDxIkxAAAwGy700m9SlwAAAABJRU5ErkJggg==">
+                    <p>Reset All</p>
+                </div>
+                <div>
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAADIklEQVR4nGNgIALY1+9n8a7crONftdndo2BZPIgG8UHiDJQCr8IVjg6p03ZZRrXeUbWOeCOj6/RTVNHgP4gG8UHiIHn34tUOJBvuXbFGyTFtxiF12+g3LGyc/xkYGHBiFjbO/+p2MW+c0qcf9C/frkCUBZ5Fy1ytYzrvs3Hx4TWcAQ2zcfH/t4rueOiWt8gVrwVuectcjQMrnjMyMZNkAQMUMzGx/DcOrHzuXrDUBWcQWcd0PAApJMcCBiSLrGM6H2ANOlAcoAeRoLTGf8vIVjDmEZLGMFDbJRUsp2DkhSLOzi3w3zFt+gGMVKRmG/UG02WM/23je//7VW39bxJUiSInLKcLFvcoXAE2FF2vul3MW/f85YhUB0qGuFIRn5jCf9+KTf/9qraAfQYSY2Rk/G+XOAFsibyBO85U55g6fQfYgrS0M6wWkS138IWzrlsG2EDrmA4wX1bXGcy3ie0C+xaXPsuotjvgDOtfs1UXlLHwWcLKzv3fPX8J2GBxFdP/rjkL/vtUbPzPKyqPNxGo20S/9q3Zrs0AKiKkte1/Eko1MjqOYEu8ileDaU3HBIIpTUbH8adPxTY3Bvei5QmiikYENYDyjkfBMrAFvpVb/nPwCBHUAzIXZD4DyCZpHYcfhDQomweCLYAFm55HNmGf6Dr99Kve4sIAKk0JxQm3oNR/79J1/73L1oNTGyjZgnwDS20E4yQ0dBWzZWTLbdyKGcEZDuR6ddtosJiiiS+Y75g6DZzDCaYuQvkElJtBBrrmLvzPzMoBjx/HtOlgcRXLEML5BARA9QGouEZXCIpcz6JVYMOkte1R5CTULMDioCDkEpDADCq72LcehUvtUYoWUH0AKq5RIzsIHFSGPoVYM52+Vy5YXsUiBEvZNWM/RgEJKjWtYzvvUasU9qreIo+1uAfVA6D6hFyLmKD1iUfeYme8FZdH0XJn65iu+9hKVgY8GKTeKrrjkXvOQuwVFragA9UHoMRAXB0f9wakHmcQ4QOgVAdKhqD0rm4T9RrSWjEE52RQRgOJg+Q9ClehpiJyACjDgnIuqAgCtbtANIgPEifGAABWL44yFFo2mAAAAABJRU5ErkJggg==">
+                    <p>Reset Category</p>
+                </div>
+                <div onclick="showmode2()">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/UlEQVR4nLWWX0vbUBjGT7q2SZitF+ZUhO5CqSHZdhQhudqNMG/9BF51+O9C2O3wC/hdvNgQYToYXvkZ0mnHWgeCbktFK4v9YyOPZCWUmXOathcPaShvfpw87/O+Ib5tO6MWifqzbdvOZ12vrlHqvlZVjyaTrZQkdXDF/Tql7oGuV9txIR8LhTNTUTxCiM/TS1X1Ps3OnglDWpblbOVyf0QeTnq0MjFx1bCsUiSkaVmlt5lMPQ6ABFrKZut4zpOQoqbVBgGQQKuUuv+FwINhAEigvZBHjxB0B8wbJsRQFK8dhqBNowqODKMSbusTxsowmQc61PVqF4Ic8CDL4+PX+P1MkjqLmUzds6zSjCw3ouo2Am8eIQiWKIQEchj7/mZs7Daqjqnq3y4ECeZBiprmvkinmzOyfLdJqfvVMCpJSepE1eVSqVYXglHBg5zPz5+WGCt/Y6x8ubBw8n5y8jevLi1Jnb5OEn5dzxOJe7T89tTUL+GTsBieFDWthiwIe4JpKgpJEOJPy3Lj2DR/fOCcBN51IQd95MS3bacyN3e6k89fyBxPvoRzci/Qxv3K7E08hH0wTMh+7+z6p3eaFukNERQ8jtwn2AeDAJay2RssvpFuxiZvM4aFDLwSbAZdUe52C4Wfsb9WMK4xTREsJBijBFfcIwdoU3Rn7E+iYekBfl6YWDmFqjAAAAAASUVORK5CYII=">
+                    <p>Back</p>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

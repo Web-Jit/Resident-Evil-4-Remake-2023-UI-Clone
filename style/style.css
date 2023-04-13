@@ -448,6 +448,10 @@
     animation: fadeIn 4s;
 }
 
+.imagefade {
+    animation: imagefade 3s;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -455,6 +459,20 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes imagefade {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -473,6 +491,11 @@
 
 .loadimg img {
     width: 40rem;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40vh;
 }
 
 .contentnotfound {
@@ -598,48 +621,4 @@
 
 .rlts:nth-child(even) {
     background-color: rgba(224, 224, 224, 0.15);
-}
-
-/* Responsiveness  */
-#desktop {
-    display: block;
-}
-
-#phone {
-    text-align: center;
-    overflow: hidden;
-    background-color: #04040C;
-    color: #DCDCDC;
-    height: 100vh;
-    width: 100%;
-    display: none;
-}
-
-#phone h2 {
-    margin-top: 30%;
-    margin-bottom: 4vh;
-}
-
-#phone p {
-    padding: 15px;
-    background-color: brown;
-    height: 12px;
-    width: 8rem;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    border-radius: 6px;
-    margin-top: 6vh;
-}
-
-@media screen and (max-width:720px) {
-    #phone {
-        display: block;
-    }
-
-    #desktop {
-        display: none;
-    }
 }

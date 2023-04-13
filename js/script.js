@@ -1,11 +1,13 @@
-window.onload = function showgameimg() {
-    document.getElementById('preloader').style.display = "none";
-    document.getElementById('startscreen').style.display = "block";
-    document.getElementById('re4logo').classList.add("imgfade");
+//  Startup Event 
+window.onload = function () {
+    setTimeout(function () {
+        document.getElementById('preloader').style.display = "none";
+    }, 2900);
+    setTimeout(function () {
+        document.getElementById('startscreen').style.display = "block";
+        document.getElementById('re4logo').classList.add('imgfade');
+    }, 2900)
 }
-// setTimeout(function(){
-//     document.getElementById('fadeim').classList.remove("imgfade");
-// },4000)
 
 function showmodeselection() {
     document.getElementById('startscreen').style.display = "none";
@@ -140,8 +142,4 @@ document.getElementById('challenges').onmouseover = function () {
 document.getElementById('credits').onmouseover = function () {
     document.getElementById('store').style.backgroundImage = "url(../images/bg06.png)";
     document.getElementById('storedown').innerHTML = "View the credits";
-}
-document.getElementById('open').onclick = function () {
-    document.getElementById('desktop').style.display = "block";
-    document.getElementById('phone').style.display = "none";
 }
